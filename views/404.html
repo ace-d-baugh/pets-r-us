@@ -1,0 +1,29 @@
+<!-- ============================================
+; Title: Assignment 4.2-9.2 - Pets-R-Us - 404.html
+; Author: Ace Baugh
+; Start Date: 08/29/2022
+; Description: WEB 340 404 page for website. 
+;              This is what is displayed when a page 
+;              is not found. Also a fun sheep game.
+============================================ -->
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title><%- title %></title>
+
+      <!-- Link to public styles -->
+		<link rel="stylesheet" href="/styles/site.css" type="text/css" />
+      <link rel="stylesheet" href="/styles/sheep.css" type="text/css" />
+      <!-- Favicon for site -->
+      <link rel="icon" href="/images/favicon.svg" type="image/x-icon">
+	</head>
+	<body>
+		<%- include('./partials/header.html') %> <!-- Import header partial -->
+      <%- include('./partials/sheep.html') %> <!-- Import header partial -->
+		<%- include('./partials/footer.html') %> <!-- Import footer partial -->
+	</body>
+</html>

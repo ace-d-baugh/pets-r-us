@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title><%- title %></title>
+
+		<link rel="stylesheet" href="/styles/site.css" type="text/css" />
+      <!-- Link to Font Awesome CDN -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">      
+      <!-- Favicon for site -->
+      <link rel="icon" href="/images/favicon.svg" type="image/x-icon">
+	</head>
+	<body>
+		<%- include('./partials/header.html') %> 
+      <div class="container">
+		<%- include('./partials/grooming-about.html') %> 
+      <hr>
+		<%- include('./partials/grooming-pricing.html') %> 
+      </div>
+		<%- include('./partials/footer.html') %>
+	</body>
+</html>

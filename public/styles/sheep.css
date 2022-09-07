@@ -1,0 +1,338 @@
+:root {
+	--time: 2s;
+}
+.sheep-container {
+	margin: 0;
+	padding: 0;
+	background-image: linear-gradient(skyblue 54%, green 46%);
+	font-family: 'Open Sans', sans-serif;
+	font-size: 16px;
+	line-height: 1.5;
+	color: #333;
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+}
+h1 {
+   position: absolute;
+   font-size: 3em;
+   font-weight: 400;
+   font-family: var(--emphasis-font-family);
+   top: 1em;
+}
+.sheep {
+	position: relative;
+	cursor: pointer;
+}
+.body-row {
+	display: flex;
+	width: 100%;
+	align-items: center;
+	justify-content: center;
+}
+.circle {
+	width: 60px;
+	height: 60px;
+	background-color: #222;
+	border-radius: 50%;
+	margin: -10px;
+   z-index: 2;
+}
+.head {
+	position: absolute;
+	top: 25px;
+	left: -50px;
+	width: 100px;
+	height: 55px;
+	background-color: #444;
+	border-radius: 50%;
+	margin: -5px;
+	transform: rotate(-10deg);
+   z-index: 3;
+}
+.eye {
+	position: absolute;
+	top: 15px;
+	right: 35px;
+	width: 10px;
+	height: 10px;
+	background-color: #000;
+	border-radius: 50%;
+	margin: -5px;
+}
+.legs {
+	position: absolute;
+	top: 140px;
+	left: 50px;
+	z-index: 1;
+	display: flex;
+}
+.leg {
+	width: 25px;
+	height: 80px;
+	background-color: #333;
+	margin: 5px;
+}
+
+/* Animations */
+
+.sheep:hover .head,
+.sheep:hover .leg,
+.sheep:hover .eye {
+	opacity: 0;
+}
+/* Row 1 */
+.sheep:hover #circ-01 {
+	animation: move-circ-01 var(--time) ease-in forwards;
+}
+@keyframes move-circ-01 {
+	0% {
+		transform: translate(0, 0);
+	}
+	100% {
+		transform: translate(-100vw, -100vh);
+	}
+}
+.sheep:hover #circ-02 {
+	animation: move-circ-02 var(--time) ease-in forwards;
+}
+@keyframes move-circ-02 {
+	0% {
+		transform: translate(0, 0);
+	}
+	100% {
+		transform: translate(-50vw, -100vh);
+	}
+}
+.sheep:hover #circ-03 {
+	animation: move-circ-03 var(--time) ease-in forwards;
+}
+@keyframes move-circ-03 {
+	0% {
+		transform: translate(0, 0);
+	}
+	100% {
+		transform: translate(0vw, -100vh);
+	}
+}
+.sheep:hover #circ-04 {
+	animation: move-circ-04 var(--time) ease-in forwards;
+}
+@keyframes move-circ-04 {
+	0% {
+		transform: translate(0, 0);
+	}
+	100% {
+		transform: translate(50vw, -100vh);
+	}
+}
+.sheep:hover #circ-05 {
+	animation: move-circ-05 var(--time) ease-in forwards;
+}
+@keyframes move-circ-05 {
+	0% {
+		transform: translate(0, 0);
+	}
+	100% {
+		transform: translate(100vw, -100vh);
+	}
+}
+/* Row 2 */
+.sheep:hover #circ-06 {
+	animation: move-circ-06 var(--time) ease-in forwards;
+}
+@keyframes move-circ-06 {
+	0% {
+		transform: translate(0, 0);
+	}
+	100% {
+		transform: translate(-100vw, -50vh);
+	}
+}
+.sheep:hover #circ-07 {
+	animation: move-circ-07 var(--time) ease-in forwards;
+}
+@keyframes move-circ-07 {
+	0% {
+		transform: translate(0, 0);
+	}
+	100% {
+		transform: translate(-100vw, -75vh);
+	}
+}
+.sheep:hover #circ-08 {
+	animation: move-circ-08 var(--time) ease-in forwards;
+}
+@keyframes move-circ-08 {
+	0% {
+		transform: translate(0, 0);
+	}
+	100% {
+		transform: translate(-25vw, -100vh);
+	}
+}
+.sheep:hover #circ-09 {
+	animation: move-circ-09 var(--time) ease-in forwards;
+}
+@keyframes move-circ-09 {
+	0% {
+		transform: translate(0, 0);
+	}
+	100% {
+		transform: translate(75vw, -100vh);
+	}
+}
+.sheep:hover #circ-10 {
+	animation: move-circ-10 var(--time) ease-in forwards;
+}
+@keyframes move-circ-10 {
+	0% {
+		transform: translate(0, 0);
+	}
+	100% {
+		transform: translate(100vw, -75vh);
+	}
+}
+.sheep:hover #circ-11 {
+	animation: move-circ-11 var(--time) ease-in forwards;
+}
+@keyframes move-circ-11 {
+	0% {
+		transform: translate(0, 0);
+	}
+	100% {
+		transform: translate(100vw, -50vh);
+	}
+}
+/* Row 3 */
+.sheep:hover #circ-12 {
+	animation: move-circ-12 var(--time) ease-in forwards;
+}
+@keyframes move-circ-12 {
+	0% {
+		transform: translate(0, 0);
+	}
+	100% {
+		transform: translate(-100vw, 50vh);
+	}
+}
+.sheep:hover #circ-13 {
+	animation: move-circ-13 var(--time) ease-in forwards;
+}
+@keyframes move-circ-13 {
+	0% {
+		transform: translate(0, 0);
+	}
+	100% {
+		transform: translate(-100vw, 75vh);
+	}
+}
+.sheep:hover #circ-14 {
+	animation: move-circ-14 var(--time) ease-in forwards;
+}
+@keyframes move-circ-14 {
+	0% {
+		transform: translate(0, 0);
+	}
+	100% {
+		transform: translate(-25vw, 100vh);
+	}
+}
+.sheep:hover #circ-15 {
+	animation: move-circ-15 var(--time) ease-in forwards;
+}
+@keyframes move-circ-15 {
+	0% {
+		transform: translate(0, 0);
+	}
+	100% {
+		transform: translate(75vw, 100vh);
+	}
+}
+.sheep:hover #circ-16 {
+	animation: move-circ-16 var(--time) ease-in forwards;
+}
+@keyframes move-circ-16 {
+	0% {
+		transform: translate(0, 0);
+	}
+	100% {
+		transform: translate(100vw, 75vh);
+	}
+}
+.sheep:hover #circ-17 {
+	animation: move-circ-17 var(--time) ease-in forwards;
+}
+@keyframes move-circ-17 {
+	0% {
+		transform: translate(0, 0);
+	}
+	100% {
+		transform: translate(100vw, 50vh);
+	}
+}
+/* Row 4 */
+.sheep:hover #circ-18 {
+	animation: move-circ-18 var(--time) ease-in forwards;
+}
+@keyframes move-circ-18 {
+	0% {
+		transform: translate(0, 0);
+	}
+	100% {
+		transform: translate(-100vw, 100vh);
+	}
+}
+.sheep:hover #circ-19 {
+	animation: move-circ-19 var(--time) ease-in forwards;
+}
+@keyframes move-circ-19 {
+	0% {
+		transform: translate(0, 0);
+	}
+	100% {
+		transform: translate(-50vw, 100vh);
+	}
+}
+.sheep:hover #circ-20 {
+	animation: move-circ-20 var(--time) ease-in forwards;
+}
+@keyframes move-circ-20 {
+	0% {
+		transform: translate(0, 0);
+	}
+	100% {
+		transform: translate(0vw, 100vh);
+	}
+}
+.sheep:hover #circ-21 {
+	animation: move-circ-21 var(--time) ease-in forwards;
+}
+@keyframes move-circ-21 {
+	0% {
+		transform: translate(0, 0);
+	}
+	100% {
+		transform: translate(50vw, 100vh);
+	}
+}
+.sheep:hover #circ-22 {
+	animation: move-circ-22 var(--time) ease-in forwards;
+}
+@keyframes move-circ-22 {
+	0% {
+		transform: translate(0, 0);
+	}
+	100% {
+		transform: translate(100vw, 100vh);
+	}
+}
+
+.go-back {
+   position: absolute;
+   bottom: 1em;
+   font-size: 2em;
+}

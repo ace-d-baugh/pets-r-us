@@ -1,0 +1,30 @@
+{
+	"name": "pets-r-us",
+	"version": "1.0.0",
+	"description": "Bellevue University Web 340 Pets-R-Us Project",
+	"main": "index.js",
+	"scripts": {
+    "start": "node index.js",
+		"dev": "nodemon index.js"
+	},
+	"keywords": [
+		"Bellevue",
+		"University",
+		"Web",
+		"340",
+		"Pets-R-Us",
+		"JavaScript",
+		"Node",
+		"Express",
+		"MongoDB"
+	],
+	"author": "Ace Baugh",
+	"license": "MIT",
+	"dependencies": {
+		"ejs": "^3.1.8",
+		"express": "^4.18.1"
+	},
+	"devDependencies": {
+		"nodemon": "^2.0.19"
+	}
+}

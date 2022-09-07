@@ -1,0 +1,40 @@
+<!-- ============================================
+; Title: Assignment 4.2-9.2 - Pets-R-Us - index.html
+; Author: Ace Baugh
+; Start Date: 08/29/2022
+; Description: WEB 340 Landing page for website. 
+;              This uses a simple template and imports 
+;              needed partials.
+============================================ -->
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title><%- title %></title>
+
+      <!-- Link to public styles -->
+		<link rel="stylesheet" href="/styles/site.css" type="text/css" />
+      <!-- Link to Font Awesome CDN -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/duyplus/fontawesome-pro/css/all.min.css">   
+      <!-- Favicon for site -->
+      <link rel="icon" href="/images/favicon.svg" type="image/x-icon">
+	</head>
+	<body>
+		<%- include('./partials/header.html') %> <!-- Import header partial -->
+      <%- include('./partials/hero.html') %> <!-- Import hero partial -->
+      <div class="container">
+      <%- include('./partials/about.html') %> <!-- Import about partial -->
+      <hr>
+      <%- include('./partials/locations.html') %> <!-- Import locations partial -->
+      <%- include('./partials/weekly-dog.html') %> <!-- Import weekly dog partial -->
+      <%- include('./partials/testimonials.html') %> <!-- Import testimonials partial -->
+      <hr>
+      <%- include('./partials/contact-form.html') %> <!-- Import contact form partial -->
+      </div>
+		<%- include('./partials/footer.html') %> <!-- Import footer partial -->
+	</body>
+</html>
