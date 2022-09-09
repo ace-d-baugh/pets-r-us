@@ -7,28 +7,12 @@
 ;              needed partials.
 ============================================ -->
 
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title><%- title %></title>
-
-      <!-- Link to public styles -->
-		<link rel="stylesheet" href="/styles/site.css" type="text/css" />
-      <!-- Link to Font Awesome CDN -->
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/duyplus/fontawesome-pro/css/all.min.css">   
-      <!-- Favicon for site -->
-      <link rel="icon" href="/images/favicon.svg" type="image/x-icon">
-	</head>
-	<body>
-		<%- include('./partials/_header.html') %> <!-- Import header partial -->
-      <div class="container">
-      <%- include('./partials/_about.html') %> <!-- Import about partial -->
-      <hr>
-      </div>
-		<%- include('./partials/_footer.html') %> <!-- Import footer partial -->
-	</body>
-</html>
+<!-- Import header partial -->
+<%- include('./partials/_header.html') %>
+<div class="container">
+	<!-- Import about partial -->
+	<%- include('./partials/_about.html') %>
+	<hr />
+</div>
+<!-- Import footer partial -->
+<%- include('./partials/_footer.html') %>

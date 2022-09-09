@@ -1,24 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title><%- title %></title>
+<!-- ============================================
+; Title: Assignment 4.2-9.2 - Pets-R-Us - grroming.html
+; Author: Ace Baugh
+; Start Date: 08/29/2022
+; Description: WEB 340 Grooming page for website. 
+;              This uses a simple template and imports 
+;              needed partials.
+============================================ -->
 
-		<link rel="stylesheet" href="/styles/site.css" type="text/css" />
-      <!-- Link to Font Awesome CDN -->
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">      
-      <!-- Favicon for site -->
-      <link rel="icon" href="/images/favicon.svg" type="image/x-icon">
-	</head>
-	<body>
-		<%- include('./partials/_header.html') %> 
-      <div class="container">
-		<%- include('./partials/_grooming-about.html') %> 
-      <hr>
-		<%- include('./partials/_grooming-pricing.html') %> 
-      </div>
-		<%- include('./partials/_footer.html') %>
-	</body>
-</html>
+<!-- Import header partial -->
+<%- include('./partials/_header.html') %>
+<div class="container">
+<!-- Import grooming write up partial -->
+	<%- include('./partials/_grooming-about.html') %>
+	<hr />
+<!-- Import grooming pricing partial -->
+	<%- include('./partials/_grooming-pricing.html') %>
+</div>
+<!-- Import footer partial -->
+<%- include('./partials/_footer.html') %>
