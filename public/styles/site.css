@@ -527,6 +527,10 @@ SPECIFIC COMPONENTS
 }
 
 /* Landing Page Testimonials styles */
+.testimonial {
+	align-self: stretch;
+}
+
 .testimonial-rating {
 	text-align: center;
 }
@@ -544,6 +548,7 @@ SPECIFIC COMPONENTS
 }
 
 .testimonial-message {
+	flex: 1;
 	font-family: var(--handwritten-font-family);
 	padding: 1em;
 }
@@ -642,6 +647,8 @@ SPECIFIC COMPONENTS
 }
 
 .trainer {
+	display: flex;
+	flex-direction: column;
 	width: 100%;
 	padding: 1em;
 	margin: 1em;
@@ -676,12 +683,20 @@ SPECIFIC COMPONENTS
 					0 10px 20px rgba(0, 0, 0, 0.3);
 }
 
+.trainer-bio {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	flex: 1;
+}
+
 .bio-title {
 	font-weight: 700;
 }
 
 .bio-content {
-	padding: .5em 0;
+	flex: 1;
+	padding: .75em 0;
 	text-align: justify;
 }
 
@@ -754,7 +769,7 @@ SPECIFIC COMPONENTS
 	}
 
    .container {
-      max-width: 1200px;
+      max-width: 75em;
    }
 
    .prose-content {
@@ -774,12 +789,12 @@ SPECIFIC COMPONENTS
 
 	.navbar-sub-items {
 		top: 2.25em;
-}
-
+	}
 
 	.trainer {
+		align-self: stretch;
 		margin: 1em 0;
-		flex-basis: calc(100%/3.25);
+		max-width: calc(100%/3.25);
 	}
 
 	.trainer img {
