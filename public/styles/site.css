@@ -22,6 +22,8 @@
 	--input-border-color: #009fe8;
 	--input-active-border-color: #fff710;
 	--feature-background-color: #fff710;
+	--table-background-color: #fff;
+	--table-border-color: #009fe8;
 	--primary-font-family: 'Playfair Display', serif;
 	--emphasis-font-family: 'Lemon', sans-serif;
 	--handwritten-font-family: 'Gloria Hallelujah', cursive;
@@ -40,6 +42,7 @@ body {
 	color: var(--text-color);
 	display: flex;
 	flex-direction: column;
+	min-height: 100vh;
 }
 
 /* ##################
@@ -86,6 +89,8 @@ a:hover {
 	margin: 2em 0;
 	display: flex;
 	justify-content: center;
+	flex-direction: column;
+	align-items: center;
 }
 
 /* Card styles */
@@ -170,11 +175,22 @@ a:hover {
 	margin: 0 auto;
 	padding: 0;
 	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+	flex: 1;
 }
 
 /* Style for Forms */
 .form {
 	width: 30em;
+}
+
+.highlight:hover {
+	background-color: var(--feature-background-color);
+	color: var(--anchor-hover-color);
+}
+
+hr {
+	border: 1px solid var(--card-border-color);
+	width: 60%;
 }
 
 /* Style for input fields */
@@ -192,11 +208,6 @@ a:hover {
 .input:focus {
    outline: none;
    border: 2px solid var(--input-active-border-color);
-}
-
-hr {
-	border: 1px solid var(--card-border-color);
-	width: 60%;
 }
 
 .left-side {
@@ -236,12 +247,15 @@ hr {
 	text-align: center;
 	font-size: 2.5rem;
 	font-weight: 400;
-	margin: 1rem 0;
+	margin: 1em 0;
 	font-family: var(--emphasis-font-family);
 }
 
-.table-cell {
-	padding: 0 0.5em;
+.section-subtitle{
+	text-align: center;
+	font-size: 1.5rem;
+	font-weight: 400;
+	margin: 1em 0;
 }
 
 .wrap-image {
@@ -464,6 +478,10 @@ SPECIFIC COMPONENTS
 	margin: 0.5em 0;
 }
 
+.location-cell {
+	padding: 0 0.5em;
+}
+
 .weekly-dog {
 	background-color: var(--feature-background-color);
 	padding: 1em;
@@ -546,6 +564,37 @@ SPECIFIC COMPONENTS
 
 .contact-form-btn {
    align-self: flex-end;
+}
+
+/* Boarding Page styles */
+.boarding-prices-table {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 1em 0;
+}
+
+.boarding-table {
+	border-collapse: collapse;
+	border-radius: .5em;
+	text-align: center;
+	background-color: var(--table-background-color);
+	box-shadow: 0 0 0 4px var(--table-border-color),
+					0 10px 20px rgba(0, 0, 0, 0.3);
+	transition: .5s;
+	
+}
+
+.boarding-table:hover {
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.boarding-cell {
+	font-size: 1.5em;
+	font-weight: 700;
+	border: 2px solid var(--table-border-color);
+	padding: 0.5em;
 }
 
 /* Grooming Page Packages styles */

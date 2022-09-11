@@ -1,5 +1,5 @@
 <!-- ============================================
-; Title: Assignment 4.2-9.2 - Pets-R-Us - header.html
+; Title: Assignment 4.2-9.2 - Pets-R-Us - _header.html
 ; Author: Ace Baugh
 ; Start Date: 08/29/2022
 ; Description: WEB 340 All Pages Header partial
@@ -16,15 +16,26 @@
 
 		<!-- Link to public styles -->
 		<link rel="stylesheet" href="/styles/site.css" type="text/css" />
+		<!-- Link to 404 Sheep Game Style Sheet -->
+		<link rel="stylesheet" href="/styles/sheep.css" type="text/css" />
 		<!-- Link to Font Awesome CDN -->
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/duyplus/fontawesome-pro/css/all.min.css" />
 		<!-- Favicon for site -->
 		<link rel="icon" href="/images/favicon.svg" type="image/x-icon" />
 	</head>
-	<body>
+	<body class="full-height">
 		<div class="header">
 			<div class="logo"><%- companyName %></div>
 			<!-- Import navbar partial -->
 			<%- include('../partials/_navbar.html') %>
 		</div>
+		<!-- If this is the landing index page, show the hero image -->
+		<% if (page === 'index') { %>
+			<%- include('../partials/_hero.html') %>
+		<% } %>
+		<!-- If this is not the 404 page, wrap the rest of the 
+				page's content in a container until the footer is shown -->
+		<% if (page !== '404') { %>
+			<div class="container">			
+		<% } %>

@@ -41,6 +41,7 @@ for(let [url, page] of Object.entries(Routes.Routes)) {
 			// Passes the title and company name to the page
 			title: `${title} | ${page[0].toUpperCase() + page.slice(1)}`,
 			companyName: companyName,
+			page: page,
 		});
    });
 };
@@ -50,6 +51,7 @@ app.use((req, res) => {
    res.status(404).render('404', {
 		title: `${title} | 404 - Page Not Found!`,
 		companyName: companyName,
+		page: '404',
 	});
 });
 
