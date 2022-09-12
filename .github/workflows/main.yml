@@ -15,7 +15,7 @@ jobs:
         API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
       with:
         source_folder: 'pets-r-us'
-        destination_repo: 'web-340/'
+        destination_repo: 'ace-d-baugh/web-340'
         destination_folder: 'pets-r-us'
         user_email: 'ace.d.baugh@gmail.com'
         user_name: 'ace-d-baugh'
