@@ -634,7 +634,7 @@ SPECIFIC COMPONENTS
 }
 
 /* Training Page styles */
-.training-section {
+.training-trainers-section {
 	background-color: var(--feature-background-color);
 	padding: .5em 0;
 }
@@ -707,6 +707,11 @@ SPECIFIC COMPONENTS
 .fa-title {
 	font-weight: 700;
 	padding-right: 0.5em;
+}
+
+.training-card-content {
+	padding: 1em 0;
+	font-weight: 700;
 }
 
 /* Footer Section for all pages */
