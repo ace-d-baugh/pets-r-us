@@ -12,7 +12,7 @@ jobs:
     - name: Pushes test folder
       uses: crykn/copy_folder_to_another_repo_action@v1.0.6
       env:
-        API_TOKEN_GITHUB: ${{ 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 }}
+        API_TOKEN_GITHUB: ${ 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 }
       with:
         source_folder: 'pets-r-us'
         destination_repo: 'web-340/'
