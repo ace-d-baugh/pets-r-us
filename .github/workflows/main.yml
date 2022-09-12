@@ -1,0 +1,22 @@
+name: Push File
+
+on: push
+
+jobs:
+  copy-file:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Pushes test folder
+      uses: crykn/copy_folder_to_another_repo_action@v1.0.6
+      env:
+        API_TOKEN_GITHUB: ${{ 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 }}
+      with:
+        source_folder: 'pets-r-us'
+        destination_repo: 'web-340/'
+        destination_folder: 'pets-r-us'
+        user_email: 'ace.d.baugh@gmail.com'
+        user_name: 'ace-d-baugh'
+        commit_msg: 'Moving new Pets-R-Us updates to 340 folder'
