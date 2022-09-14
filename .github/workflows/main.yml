@@ -12,10 +12,10 @@ jobs:
     - name: Pushes test folder
       uses: crykn/copy_folder_to_another_repo_action@v1.0.6
       env:
-        API_TOKEN_GITHUB: ${{ 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 }}
+        API_TOKEN_GITHUB: ${{ secrets.COPY_STUFF }}
       with:
         source_folder: 'pets-r-us'
-        destination_repo: 'web-340/'
+        destination_repo: 'ace-d-baugh/web-340'
         destination_folder: 'pets-r-us'
         user_email: 'ace.d.baugh@gmail.com'
         user_name: 'ace-d-baugh'
