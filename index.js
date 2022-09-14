@@ -14,20 +14,25 @@ const path = require('path');
 const Routes = require('./routes');
 const mongoose = require('mongoose');
 
+const Customer = require('./models/customer');
+
 // Create the express application
 const app = express();
 
 // Port to listen on
 const PORT = process.env.PORT || 3000;
 // Mongoose connection string
-const CONN = `mongodb+srv://acieffe:Mo$t0rmon22a@buwebdev-cluster-1.9wmv0d7.mongodb.net/test`;
+const CONN = `mongodb+srv://acieffe:monbijou13@buwebdev-cluster-1.9wmv0d7.mongodb.net/pets-r-usDB`;
 
 // Connect to the database
-mongoose.connect(CONN).then(() => {
-	console.log('Database connection successful');
-}).catch(err => {
-	console.log('Database connection error: ' + err.message);
-});
+mongoose
+	.connect(CONN)
+	.then(() => {
+		console.log('Database connection successful');
+	})
+	.catch((err) => {
+		console.log('Database connection error: ' + err.message);
+	});
 
 // constants for the website to be passed in
 const title = `Pets-&#7449;-Us`;
@@ -42,30 +47,58 @@ app.set('view engine', 'html');
 
 // Use the public folder for static assets
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.urlencoded({ extended: true })); // added during week 6 assignment
+app.use(express.json()); // added during week 6 assignment
 
 // Loops through the routes object and creates a route for each
 // then renders the page
-for(let [url, page] of Object.entries(Routes.Routes)) {
-   app.get(url, (req, res) => {
-      res.render(page, {
+for (let [url, page] of Object.entries(Routes.Routes)) {
+	app.get(url, (req, res) => {
+		res.render(page, {
 			// Passes the title and company name to the page
 			title: `${title} | ${page[0].toUpperCase() + page.slice(1)}`,
 			companyName: companyName,
 			page: page,
 		});
-   });
-};
+	});
+}
 
 // Post customer form data to database
-app.post('/registration', (req, res) => {
+app.post('/', (req, res, next) => {
+	// console.log the sent data
 	console.log(req.body);
-	console.log(reg.body.customerID);
-	console.log(reg.body.email);
+	console.log(req.body.customerID);
+	console.log(req.body.email);
+
+	// Create a new customer object
+	const newCustomer = new Customer({
+		customerID: req.body.customerID,
+		email: req.body.email,
+	});
+
+	console.log(newCustomer);
+
+	// Save the new customer to the database
+	Customer.create(newCustomer, (err, customer) => {
+		// If there is an error, log it
+		if (err) {
+			console.log(err);
+			next(err);
+		// If there is no error, log the customer and redirect to the home page
+		} else {
+			console.log(`New Customer: ${customer} has been added to the database`);
+			res.render('index', {
+				title: `${title} | Index`,
+				companyName: companyName,
+				page: 'index',
+			});
+		}
+	});
 });
 
 // If page is not found, render the 404 page
 app.use((req, res) => {
-   res.status(404).render('404', {
+	res.status(404).render('404', {
 		title: `${title} | 404 - Page Not Found!`,
 		companyName: companyName,
 		page: '404',
