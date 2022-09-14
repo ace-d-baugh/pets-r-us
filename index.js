@@ -12,9 +12,22 @@ const { Console } = require('console');
 const express = require('express');
 const path = require('path');
 const Routes = require('./routes');
+const mongoose = require('mongoose');
 
 // Create the express application
 const app = express();
+
+// Port to listen on
+const PORT = process.env.PORT || 3000;
+// Mongoose connection string
+const CONN = `mongodb+srv://acieffe:Mo$t0rmon22a@buwebdev-cluster-1.9wmv0d7.mongodb.net/test`;
+
+// Connect to the database
+mongoose.connect(CONN).then(() => {
+	console.log('Database connection successful');
+}).catch(err => {
+	console.log('Database connection error: ' + err.message);
+});
 
 // constants for the website to be passed in
 const title = `Pets-&#7449;-Us`;
@@ -30,9 +43,6 @@ app.set('view engine', 'html');
 // Use the public folder for static assets
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Port to listen on
-const PORT = process.env.PORT || 3000;
-
 // Loops through the routes object and creates a route for each
 // then renders the page
 for(let [url, page] of Object.entries(Routes.Routes)) {
@@ -45,6 +55,13 @@ for(let [url, page] of Object.entries(Routes.Routes)) {
 		});
    });
 };
+
+// Post customer form data to database
+app.post('/registration', (req, res) => {
+	console.log(req.body);
+	console.log(reg.body.customerID);
+	console.log(reg.body.email);
+});
 
 // If page is not found, render the 404 page
 app.use((req, res) => {

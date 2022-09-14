@@ -10,6 +10,8 @@ const Routes = {
 	'/boarding.html': 'boarding',
 	'/training': 'training',
 	'/training.html': 'training',
+	'/registration': 'registration',
+	'/registration.html': 'registration',
 };
 
 module.exports.Routes = Routes;
