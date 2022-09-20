@@ -8,7 +8,6 @@
 ============================================ */
 
 // Require statements for express, http, and path
-const { Console } = require('console');
 const express = require('express');
 const path = require('path');
 const Routes = require('./routes');
@@ -91,6 +90,23 @@ app.post('/', (req, res, next) => {
 				title: `${title} | Index`,
 				companyName: companyName,
 				page: 'index',
+			});
+		}
+	});
+});
+
+// get the customer list
+app.get('/customers', (req, res, next) => {
+	Customer.find({}, (err, customers) => {
+		if (err) {
+			console.log(err);
+			next(err);
+		} else {
+			res.render('customers', {
+				title: `${title} | Customer List`,
+				companyName: companyName,
+				page: 'customers',
+				customers: customers,
 			});
 		}
 	});

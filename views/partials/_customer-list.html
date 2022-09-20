@@ -1,0 +1,35 @@
+<!-- ============================================
+; Title: Assignment 4.2-9.2 - Pets-R-Us - _customer-list.html
+; Author: Ace Baugh
+; Start Date: 08/29/2022
+; Description: WEB 340 Customers Page Customer List partial
+;              A simple table with a list of customers
+============================================ -->
+
+<div class="contact-list" id="customers">
+	<!-- Customer List Title -->
+	<div class="section-title"><%- companyName %> Customer List</div>
+	<div class="contact-form-content">
+      <!-- Customer List Table-->
+<% if (customers.length > 0) { %>
+      <table class="table">
+         <thead>
+            <tr>
+               <th scope="col">Customer ID</th>
+               <th scope="col">Email</th>
+            </tr>
+         </thead>
+         <tbody>
+            <% for (let i = 0; i < customers.length; i++) { %>
+            <tr>
+               <td><%= customers[i].customerID %></td>
+               <td><%= customers[i].email %></td>
+            </tr>
+            <% } %>
+         </tbody>
+      </table>
+      <% } else { %>
+      <p>No customers found. Try adding some.</p>
+      <% } %>
+	</div>
+</div>
