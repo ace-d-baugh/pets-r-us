@@ -2,6 +2,7 @@
 
 :root {
 	--text-color: #000;
+	--text-warning: #f00;
 	--background-color: #ddd;
 	--header-background-color: #009fe8;
 	--header-text-color: #fff;
@@ -24,6 +25,7 @@
 	--feature-background-color: #fff710;
 	--table-background-color: #fff;
 	--table-border-color: #009fe8;
+	--table-hover-background-color: #fff710;
 	--primary-font-family: 'Playfair Display', serif;
 	--emphasis-font-family: 'Lemon', sans-serif;
 	--handwritten-font-family: 'Gloria Hallelujah', cursive;
@@ -256,6 +258,29 @@ hr {
 	font-size: 1.5rem;
 	font-weight: 400;
 	margin: 1em 0;
+}
+
+/* Style for Tables */
+.table {
+	border-collapse: collapse;
+	box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 10px;
+	background-color: var(--table-background-color);
+}
+
+.table:hover {
+	box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 20px;
+	cursor: pointer;
+}
+
+.table td,
+.table th {
+	border: 2px solid var(--table-border-color);
+	padding: 0.5em;
+}
+
+.table-hover:hover {
+	background-color: var(--table-hover-background-color);
+	color: var(--table-header-color);
 }
 
 .wrap-image {
@@ -712,6 +737,22 @@ SPECIFIC COMPONENTS
 .training-card-content {
 	padding: 1em 0;
 	font-weight: 700;
+}
+
+.customer-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.empty-warning {
+	text-align: center;
+	font-size: 1.5rem;
+	font-weight: 400;
+	margin: 1em 0;
+	font-family: var(--handwritten-font-family);
+	color: var(--text-warning);
 }
 
 /* Footer Section for all pages */

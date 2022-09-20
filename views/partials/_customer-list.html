@@ -9,7 +9,7 @@
 <div class="contact-list" id="customers">
 	<!-- Customer List Title -->
 	<div class="section-title"><%- companyName %> Customer List</div>
-	<div class="contact-form-content">
+	<div class="customer-container">
       <!-- Customer List Table-->
 <% if (customers.length > 0) { %>
       <table class="table">
@@ -21,7 +21,7 @@
          </thead>
          <tbody>
             <% for (let i = 0; i < customers.length; i++) { %>
-            <tr>
+            <tr class="table-hover">
                <td><%= customers[i].customerID %></td>
                <td><%= customers[i].email %></td>
             </tr>
@@ -29,7 +29,7 @@
          </tbody>
       </table>
       <% } else { %>
-      <p>No customers found. Try adding some.</p>
+      <p class="empty-warning">No customers found. Try adding some.</p>
       <% } %>
 	</div>
 </div>
