@@ -102,6 +102,7 @@ app.get('/customers', (req, res, next) => {
 			console.log(err);
 			next(err);
 		} else {
+			// send the customer list to the customers page
 			res.render('customers', {
 				title: `${title} | Customer List`,
 				companyName: companyName,
