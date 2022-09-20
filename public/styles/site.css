@@ -265,6 +265,7 @@ hr {
 	border-collapse: collapse;
 	box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 10px;
 	background-color: var(--table-background-color);
+	margin-bottom: 2em;
 }
 
 .table:hover {
