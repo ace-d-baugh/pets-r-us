@@ -12,8 +12,6 @@ const Routes = {
 	'/training.html': 'training',
 	'/registration': 'registration',
 	'/registration.html': 'registration',
-	'/appointments': 'appointments', 
-	'/appointments.html': 'appointments',
 };
 
 module.exports.Routes = Routes;

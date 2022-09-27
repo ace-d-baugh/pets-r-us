@@ -757,7 +757,8 @@ SPECIFIC COMPONENTS
 	font-weight: 700;
 }
 
-.customer-container {
+.customer-container,
+.appointment-container {
 	display: flex;
 	flex-direction: column;
 	align-items: center;

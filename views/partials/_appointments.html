@@ -1,0 +1,47 @@
+<!-- ============================================
+; Title: Assignment 4.2-9.2 - Pets-R-Us - _appointments.html
+; Author: Ace Baugh
+; Start Date: 08/29/2022
+; Description: WEB 340 Appointments Page Appointments partial
+;              A simple table with a list of appointments will
+;					be displayed for the email address entered.
+============================================ -->
+
+<div class="contact-list" id="appointments">
+	<!-- Appointment List Title -->
+	<div class="section-title">My <%- companyName %> Appointments</div>
+	<div class="appointment-container">
+   <!-- Appointment List Table-->
+   <% if (appointments.length > 0) { %>
+      <table class="table">
+         <thead>
+            <tr>
+               <!-- Table headers -->
+               <th scope="col">First Name</th>
+               <th scope="col">Last Name</th>
+               <th scope="col">Email</th>
+               <th scope="col">Service</th>
+            </tr>
+         </thead>
+         <tbody>
+            <!-- Loop over each appointment -->
+            <% appointments.forEach((appointment) => { %>
+            <tr class="table-hover">
+               <!-- Table data -->
+               <td><%= appointment.firstName %></td>
+               <td><%= appointment.lastName %></td>
+               <td><%= appointment.email %></td>
+               <td><%= appointment.services %></td>
+            </tr>
+            <!-- close loop -->
+            <% }); %>
+         </tbody>
+      </table>
+      <% } else { %>
+      <!-- If no appointments found, display empty table text -->
+      <p class="empty-warning">No appointments found. Try booking one.</p>
+      <% } %>
+      <!-- button to book an appointment -->
+      <a href="/booking"><div class="btn btn-primary">Book Today!</div></a>
+	</div>
+</div>

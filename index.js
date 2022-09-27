@@ -166,6 +166,24 @@ app.get('/booking', (req, res) => {
 	});
 });
 
+// get the appointment list ** FOR NOW **
+app.get('/appointments', (req, res, next) => {
+	Appointment.find({}, (err, appointments) => {
+		if (err) {
+			console.log(err);
+			next(err);
+		} else {
+			// send the appointments list to the appointments page
+			res.render('appointments', {
+				title: `${title} | My Appointments`,
+				companyName: companyName,
+				page: 'appointments',
+				appointments: appointments,
+			});
+		}
+	});
+});
+
 // If page is not found, render the 404 page
 app.use((req, res) => {
 	res.status(404).render('404', {
