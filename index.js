@@ -65,7 +65,7 @@ for (let [url, page] of Object.entries(Routes.Routes)) {
 }
 
 // Post customer form data to database
-app.post('/', (req, res, next) => {
+app.post('/customers', (req, res, next) => {
 	// console.log the sent data
 	console.log(req.body);
 	console.log(req.body.customerID);
