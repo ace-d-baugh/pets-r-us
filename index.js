@@ -12,8 +12,10 @@ const express = require('express');
 const path = require('path');
 const Routes = require('./routes');
 const mongoose = require('mongoose');
+const fs = require('fs');
 
 const Customer = require('./models/customer');
+const Appointment = require('./models/appointment');
 
 // Create the express application
 const app = express();
@@ -83,7 +85,7 @@ app.post('/', (req, res, next) => {
 		if (err) {
 			console.log(err);
 			next(err);
-		// If there is no error, log the customer and redirect to the home page
+			// If there is no error, log the customer and redirect to the home page
 		} else {
 			console.log(`New Customer: ${customer} has been added to the database`);
 			res.render('index', {
@@ -110,6 +112,57 @@ app.get('/customers', (req, res, next) => {
 				customers: customers,
 			});
 		}
+	});
+});
+
+// post form input into mongoose database
+app.post('/booking', (req, res, next) => {
+	console.log(req.body);
+	console.log(req.body.firstName);
+	console.log(req.body.lastName);
+	console.log(req.body.email);
+	console.log(req.body.services);
+
+	// Create a new appointment object
+	const newAppointment = new Appointment({
+		firstName: req.body.firstName,
+		lastName: req.body.lastName,
+		email: req.body.email,
+		services: req.body.services,
+	});
+
+	console.log(newAppointment);
+
+	// Save the new appointment to the database
+	Appointment.create(newAppointment, (err, appointment) => {
+		// If there is an error, log it
+		if (err) {
+			console.log(err);
+			next(err);
+			// If there is no error, log the appointment and redirect to the home page
+		} else {
+			console.log(`New Appointment: ${appointment} has been added to the database`);
+			res.render('index', {
+				title: `${title} | Index`,
+				companyName: companyName,
+				page: 'index',
+			});
+		}
+	});
+});
+
+// get the services list and add it to booking page
+app.get('/booking', (req, res) => {
+	let jsonFile = fs.readFileSync('./public/data/services.json');
+	let services = JSON.parse(jsonFile);
+
+	console.log(services);
+
+	res.render('booking', {
+		title: `${title} | Services`,
+		companyName: companyName,
+		page: 'services',
+		services: services,
 	});
 });
 

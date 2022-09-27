@@ -6,17 +6,12 @@
 ;              A simple Booking form with a submit button
 ============================================ -->
 
-<div class="contact-form" id="contact">
+<div class="contact-form" id="book">
 	<!-- Booking Form Title -->
-	<div class="section-title">Join the Club!</div>
+	<div class="section-title">Book an Appointment!</div>
 	<div class="contact-form-content">
 		<!-- Booking Form -->
-		<form class="form" method="post" action="/">
-			<div class="form-group">
-				<!-- Booking Form Username Input Field -->
-				<label for="username">Username</label>
-				<input type="text" class="input" id="username" name="username" placeholder="Enter Username" required autofocus />
-			</div>
+		<form class="form" method="post" action="/booking">
 			<div class="form-group">
 				<!-- Booking Form First Name Input Field -->
 				<label for="firstName">First Name</label>
@@ -35,10 +30,16 @@
 			<div class="form-group">
 				<!-- Booking Services Input Field -->
 				<label for="services">Services</label>
-				
+				<select class="drop-down-menu" id="services" name="services" required>
+				<% services.forEach((service) => { %>
+					<option value="<%= service.value %>"><%= service.text %></option>
+				<% }) %>
+				</select>
 			</div>
 			<!-- Booking Form Submit Button -->
-			<input type="submit" class="btn btn-primary"></input>
+			<div class="submit-btn">
+				<input type="submit" class="btn btn-primary"></input>
+			</div>
 		</form>
 	</div>
 </div>

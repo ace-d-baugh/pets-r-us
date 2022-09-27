@@ -196,7 +196,8 @@ hr {
 }
 
 /* Style for input fields */
-.input {
+.input, 
+.drop-down-menu {
    width: 100%;
 	padding: .75em 1.25em;
 	margin: 0.5em 0;
@@ -207,9 +208,25 @@ hr {
 }
 
 .input:active,
-.input:focus {
+.input:focus
+.drop-down-menu:active,
+.drop-down-menu:focus,
+.input:valid,
+.drop-down-menu:valid,
+.input:visited,
+.drop-down-menu:invalid {
    outline: none;
    border: 2px solid var(--input-active-border-color);
+}
+
+.form .form-group {
+	margin-bottom: 1em;
+}
+
+.submit-btn {
+	margin: 2em 0 0;
+	width: 100%;
+	text-align: center;
 }
 
 .left-side {
