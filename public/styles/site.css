@@ -205,16 +205,13 @@ hr {
 	border: 2px solid var(--input-border-color);
 	border-radius: 0.75em;
 	box-sizing: border-box;
+	outline: none;
 }
 
 .input:active,
-.input:focus
+.input:focus,
 .drop-down-menu:active,
-.drop-down-menu:focus,
-.input:valid,
-.drop-down-menu:valid,
-.input:visited,
-.drop-down-menu:invalid {
+.drop-down-menu:focus {
    outline: none;
    border: 2px solid var(--input-active-border-color);
 }
