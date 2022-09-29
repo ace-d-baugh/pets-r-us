@@ -863,3 +863,35 @@ SPECIFIC COMPONENTS
 		width: 75%;
 	}
 }
+
+@media screen and (max-width: 565px) {
+	.header .logo {
+		font-size: 1em;
+	}
+
+	.navbar {
+		font-size: .5em;
+	}
+
+	.hero-title {
+		font-size: 3.5em;
+	}
+}
+
+@media screen and (max-width: 360px) {
+	.header .logo {
+		font-size: .5em;
+	}
+
+	.navbar {
+		font-size: .25em;
+	}
+
+	.hero-title {
+		font-size: 2.5em;
+	}
+
+	.section-title {
+		font-size: 1.5em;
+	}
+}
