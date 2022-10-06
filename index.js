@@ -166,7 +166,7 @@ app.get('/booking', (req, res) => {
 	});
 });
 
-// get the appointment list ** FOR NOW **
+// get the appointment list
 app.get('/appointments', (req, res, next) => {
 	Appointment.find({}, (err, appointments) => {
 		if (err) {
@@ -184,6 +184,7 @@ app.get('/appointments', (req, res, next) => {
 	});
 });
 
+// get the appointment that matches passed in value from the user
 app.get('/api/appointments/:email', (req, res, next) => {
 	Appointment.find({'email': req.params.email}, (err, appointments) => {
 		if (err) {
