@@ -10,38 +10,69 @@
 <div class="contact-list" id="appointments">
 	<!-- Appointment List Title -->
 	<div class="section-title">My <%- companyName %> Appointments</div>
-	<div class="appointment-container">
-   <!-- Appointment List Table-->
-   <% if (appointments.length > 0) { %>
-      <table class="table">
-         <thead>
-            <tr>
-               <!-- Table headers -->
-               <th scope="col">First Name</th>
-               <th scope="col">Last Name</th>
-               <th scope="col">Email</th>
-               <th scope="col">Service</th>
-            </tr>
-         </thead>
-         <tbody>
-            <!-- Loop over each appointment -->
-            <% appointments.forEach((appointment) => { %>
-            <tr class="table-hover">
-               <!-- Table data -->
-               <td><%= appointment.firstName %></td>
-               <td><%= appointment.lastName %></td>
-               <td><%= appointment.email %></td>
-               <td><%= appointment.services %></td>
-            </tr>
-            <!-- close loop -->
-            <% }); %>
-         </tbody>
-      </table>
-      <% } else { %>
-      <!-- If no appointments found, display empty table text -->
-      <p class="empty-warning">No appointments found. Try booking one.</p>
-      <% } %>
+   <div class="appointment-form">
+		<div class="form">
+			<div class="form-group">
+				<!-- Search Emails Input Field -->
+				<label for="appointmentEmail">Search Appointment By Email</label>
+				<input type="email" class="input" id="appointmentEmail" name="appointmentEmail" placeholder="Enter Email Address" required autofocus />
+			</div>
+			<!-- Registration Form Submit Button -->
+			<div class="submit-btn">
+				<input type="submit" class="btn btn-primary" id="search" value="Search"></input>
+			</div>
+		</div>
+   </div>
+	<div class="appointment-container" id="appointment-container">OR</div>
+   <div class="book-link">
       <!-- button to book an appointment -->
       <a href="/booking"><div class="btn btn-primary">Book Today!</div></a>
-	</div>
+   </div>
 </div>
+
+<script type="text/javascript">
+   // Listen for a click on the appointment submit button
+   document.getElementById("search").onclick = function() {
+      // Store value in a variable
+      const searchText = document.getElementById("appointmentEmail").value;
+
+      // Grab the information from the database that matches the user input
+      fetch('api/appointments/' + searchText)
+         .then(res => res.json())
+         .then(data => {
+            // If the data comes back from the database then return the data in a table
+            if (data.length > 0) {
+
+               let tableString = `<table class="table">
+                                    <thead>
+                                       <tr>
+                                          <!-- Table headers -->
+                                          <th scope="col">First Name</th>
+                                          <th scope="col">Last Name</th>
+                                          <th scope="col">Email</th>
+                                          <th scope="col">Service</th>
+                                       </tr>
+                                    </thead>
+                                    <tbody>`;
+
+               for (let appointment of data) {
+                  tableString += `<tr class="table-hover">
+                                    <!-- Table data -->
+                                    <td>${appointment.firstName}</td>
+                                    <td>${appointment.lastName}</td>
+                                    <td>${appointment.email}</td>
+                                    <td>${appointment.services}</td>
+                                 </tr>`;
+               }
+
+               tableString += `</tbody>
+                           </table>`;
+               document.getElementById('appointment-container').innerHTML = tableString;
+            } else {
+               // If there is nothing to display, then just return a request to the user to add a new appointment
+               document.getElementById('appointment-container').innerHTML = `<p class="empty-warning">There are no appointments listed for this email. Please book one today!</p>`;
+            }
+
+         });
+      }
+</script>

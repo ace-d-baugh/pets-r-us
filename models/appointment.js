@@ -11,10 +11,10 @@ const Schema = mongoose.Schema;
 
 // Create the appointment schema
 let appointmentSchema = new Schema({
-   firstName: { type: String, required: true },
-   lastName: { type: String, required: true },
-	email: { type: String, required: true, unique: true },
-   services: { type: String, required: true },
+	firstName: { type: String, required: true },
+	lastName: { type: String, required: true },
+	email: { type: String, required: true },
+	services: { type: String, required: true },
 });
 
 module.exports = mongoose.model('Appointment', appointmentSchema);

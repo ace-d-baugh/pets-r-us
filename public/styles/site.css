@@ -755,11 +755,24 @@ SPECIFIC COMPONENTS
 }
 
 .customer-container,
-.appointment-container {
+.appointment-container,
+.appointment-form {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+}
+
+.appointment-form {
+	margin-bottom: 2rem;
+}
+
+.book-link {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	margin-top: 1rem;	
 }
 
 .empty-warning {

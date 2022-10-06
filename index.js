@@ -184,6 +184,17 @@ app.get('/appointments', (req, res, next) => {
 	});
 });
 
+app.get('/api/appointments/:email', (req, res, next) => {
+	Appointment.find({'email': req.params.email}, (err, appointments) => {
+		if (err) {
+			console.log(err);
+			next(err);
+		} else {
+			res.json(appointments);
+		}
+	})
+})
+
 // If page is not found, render the 404 page
 app.use((req, res) => {
 	res.status(404).render('404', {
